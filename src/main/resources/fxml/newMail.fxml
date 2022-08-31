@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane fx:id="pnlReadMessage" stylesheets="@../css/style.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Client.SubController.NewMailController">
+   <top>
+      <VBox styleClass="rightside" stylesheets="" BorderPane.alignment="CENTER">
+         <children>
+            <HBox>
+               <children>
+                          <GridPane>
+                              <columnConstraints>
+                                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="1.7976931348623157E308" minWidth="29.79998779296875" prefWidth="72.20000839233398" />
+                                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="577.6000038146973" minWidth="10.0" prefWidth="381.799991607666" />
+                              </columnConstraints>
+                              <rowConstraints>
+                                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              </rowConstraints>
+                              <children>
+                                  <Label fx:id="labelFrom" text="Da:" />
+                                  <Label fx:id="labelTo" text="A:" GridPane.rowIndex="1" />
+                                  <Label fx:id="labelObject" text="Oggetto:" GridPane.rowIndex="2" />
+                        <TextField fx:id="textFieldObjectRight" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                           <GridPane.margin>
+                              <Insets />
+                           </GridPane.margin>
+                        </TextField>
+                        <TextField fx:id="textFieldToRight" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                           <GridPane.margin>
+                              <Insets />
+                           </GridPane.margin>
+                        </TextField>
+                        <Label fx:id="labelFromRight" text="Label" GridPane.columnIndex="1" />
+                              </children>
+                              <padding>
+                                  <Insets left="12.0" right="12.0" />
+                              </padding>
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                          </GridPane>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </top>
+   <bottom>
+      <HBox styleClass="rightside" stylesheets="" BorderPane.alignment="CENTER">
+         <children>
+            <VBox alignment="CENTER" prefHeight="26.0" prefWidth="226.0" />
+            <VBox alignment="CENTER">
+               <children>
+                          <Button id="btnDelete" fx:id="btnSend" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onMouseClicked="#onSendButtonClick" stylesheets="@../css/style.css" text="Invia" textAlignment="CENTER" />
+               </children>
+            </VBox>
+         </children>
+      </HBox>
+   </bottom>
+   <center>
+              <TextArea id="txtEmailContent" fx:id="newMailContent" editable="true" text="&#10;&#10;" BorderPane.alignment="CENTER">
+         <padding>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </padding>
+      </TextArea>
+   </center>
+      </BorderPane>

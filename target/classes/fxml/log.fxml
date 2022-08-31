@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+
+
+<TableView fx:id="tableLog" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Server.ServerController">
+  <columns>
+    <TableColumn fx:id="messageCol" prefWidth="417.1999939084053" text="Message" />
+    <TableColumn fx:id="timeCol" prefWidth="182.79998779296875" text="Time" />
+  </columns>
+</TableView>

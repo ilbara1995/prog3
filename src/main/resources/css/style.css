@@ -1,0 +1,30 @@
+.leftside{
+    -fx-background-color: #abeea3;
+}
+.rightside{
+    -fx-background-color: #abeea3;
+}
+#replyBtn{
+    -fx-background-image: url("img/reply_icon.png");
+}
+#replyAllBtn{
+    -fx-background-image: url("img/replyall_icon.png");
+}
+#forwardBtn{
+    -fx-background-image: url("img/forward_icon.png");
+}
+
+#forwardBtn:hover,#replyAllBtn:hover,#replyBtn:hover,#newBtn:hover, #btnSend:hover,#btnDelete:hover, #labelIncomingMail:hover, #labelSentMail:hover{
+    -fx-background-color: white;
+    -fx-text-fill: black;
+}
+#newBtn{
+    -fx-background-image: url("img/plus_icon.png");
+}
+.upperButton{
+    -fx-background-color: #abeea3;
+}
+#labelIncomingMail:focused #labelSentMail:focused{
+    -fx-background-color: white;
+    -fx-text-fill: black;
+}

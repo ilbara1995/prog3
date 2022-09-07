@@ -105,7 +105,6 @@ public class ClientController {
 
         selectedEmail = null;
 
-        //controlla
         lstEmail.setOnMouseClicked(this::showSelectedEmail);
 
         lstEmail.setVisible(false);
@@ -181,7 +180,6 @@ public class ClientController {
             String text = "\n\n"+"-----Forwarded message-----\n"+selectedEmail.getText()+"\n"+"Da; "+
                     selectedEmail.getSender()+"\n"+"Date: "+selectedEmail.getSendingDate()+"\n"+
                 "Subject: "+selectedEmail.getSubject()+"\n"+"To: "+ String.join("; ", selectedEmail.getReceivers());
-            //updateDetailView(new Email(model.emailAddressProperty().get(),List.of(""),selectedEmail.getSubject(), text));
             updateFwdView(new Email(model.emailAddressProperty().get(),List.of(""),selectedEmail.getSubject(), text));
             changeRightBorderPane(fwdBorderPane);
         /**

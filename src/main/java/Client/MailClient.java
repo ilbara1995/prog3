@@ -144,7 +144,7 @@ public class MailClient {
             String input = e.getReceivers().get(i);
             if (!Pattern.matches(regex, input)) return false;
         }
-        return Pattern.matches(regex, e.getSender());
+        return Pattern.matches(regex, e.getSender());//uneseful sender email check
     }
 
     /**

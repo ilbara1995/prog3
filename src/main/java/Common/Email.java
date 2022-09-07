@@ -5,16 +5,13 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-public class Email implements Serializable { /* Valutare utilizzo properties*/
+public class Email implements Serializable {
     private int id;
-    private String sender;
-    private List<String> receivers;
-    private String subject;
-    private String text;
-    private Date sendingDate;
-
-    /** empty constructor **/
-    private Email() {}
+    private final String sender;
+    private final List<String> receivers;
+    private final String subject;
+    private final String text;
+    private final Date sendingDate;
 
 
     /**
@@ -27,7 +24,7 @@ public class Email implements Serializable { /* Valutare utilizzo properties*/
      */
 
     public Email(String sender, List<String> receivers, String subject, String text){
-        this.id = 0;//valore riassegnato all'invio della email
+        this.id = 0;//default values
         this.sender = sender;
         this.receivers = new ArrayList<>(receivers);
         this.subject = subject;

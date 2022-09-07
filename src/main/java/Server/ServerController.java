@@ -67,7 +67,7 @@ public class ServerController {
         //init file unpulled
         for(String s:username){
             try {
-                if(unpulledFile.get(s).createNewFile())initUnpulledFile(unpulledFile.get(s));
+                if(unpulledFile.get(s).createNewFile() || checkIfFileIsEmpty(unpulledFile.get(s)))initUnpulledFile(unpulledFile.get(s));//doesn't init file if file exists but is empty
             } catch (IOException e) { e.printStackTrace();}
         }
 
@@ -100,4 +100,16 @@ public class ServerController {
         }
     }
 
+    /**
+     *
+     * Check if file is empty return true if file is empty
+     *
+     */
+
+    private boolean checkIfFileIsEmpty(File f) throws IOException {
+        BufferedReader br = new BufferedReader(new FileReader(f));
+        String tmp = br.readLine();
+        br.close();
+        return tmp == null;
+    }
 }

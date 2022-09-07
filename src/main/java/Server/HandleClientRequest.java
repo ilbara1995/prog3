@@ -230,11 +230,11 @@ public class HandleClientRequest {
                     br.close();
                     if(tmp == null) {//empty file
                         writeOnFile(toWrite,e,emptyArray);//scrive arraylist su file
-                        ArrayList<Email> read = readFromFile(toWrite);
-                        printListEmail(read);}
+                        ArrayList<Email> read = readFromFile(toWrite);//just addedd to verify mail added
+                        printListEmail(read);}//just addedd to verify mail added
                     else {// not empty file
-                        ArrayList<Email> read = readFromFile(toWrite);//legge arraylist mail da file e lo salva in read
-                        printListEmail(read);
+                        ArrayList<Email> read = readFromFile(toWrite);//read arraylist from file and save it to read
+                        printListEmail(read);//just addedd to verify mail added
                         writeOnFile(toWrite,e,read);}
                     createAndAppendLog("sent email from client "+getClientName());
                 } catch (IOException | ClassNotFoundException ex) {
@@ -372,7 +372,7 @@ private int getUnpulledFromFile(){
             File f = unpulledFile.get(clientName);
             fi = new FileInputStream(f);
             val = fi.read();
-            System.out.println("read 1 = "+ val);
+            System.out.println("read = "+ val);
             fi.close();
             if(val == 1){
                 fo = new FileOutputStream(f);

@@ -37,7 +37,7 @@ public class MailServer {
         this.mailbox = mailbox;
         this.unpulledFile = unpulledFile;
         this.username = username;
-        List<Log> list = Collections.synchronizedList(new ArrayList<Log>());
+        List<Log> list = Collections.synchronizedList(new ArrayList<>());
         logsList = FXCollections.observableArrayList(list);
         this.logs = new SimpleListProperty<>();
         logs.set(logsList);
@@ -45,7 +45,7 @@ public class MailServer {
 
 
     /**
-     * Server listening on a port and generate socket managed by thread
+     * Server listening on a port and generate socket managed by threadpool
      *
      */
 

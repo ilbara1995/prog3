@@ -43,7 +43,7 @@ public class ServerController {
 
 
 
-        barluc = new File("src/main/resources/receivedEmails/barluc@yahoo.it.txt");//dovrebbe funzionare
+        barluc = new File("src/main/resources/receivedEmails/barluc@yahoo.it.txt");
         barlucUnpulled = new File("src/main/resources/receivedEmails/barlucUnpulled.txt");
         beator = new File("src/main/resources/receivedEmails/beator@yahoo.it.txt");
         beatorUnpulled = new File("src/main/resources/receivedEmails/beatorUnpulled.txt");
@@ -64,7 +64,7 @@ public class ServerController {
         username.add("beator@yahoo.it");
         username.add("rosator@yahoo.it");
 
-        //inizializzo file unpulled
+        //init file unpulled
         for(String s:username){
             try {
                 if(unpulledFile.get(s).createNewFile())initUnpulledFile(unpulledFile.get(s));

@@ -327,11 +327,11 @@ private void writeListOfEmailOnSocket(ArrayList<Email> l) throws IOException {
 
 /**
  *
- * leggo file che contiene id incremento id e lo scrivo su file
+ * read id from file increment it and write it ot file
  *
  */
 
-private int getIdFromFIle() { //legge id da file lo incrementa e lo restituisce
+private int getIdFromFIle() {
     int id = 0;
     synchronized (mailbox.get("id")){
         try {
@@ -385,7 +385,7 @@ private int getUnpulledFromFile(){
     return val;
 }
 /**
- * Set Unpulled file to 1 indicating that there are unpulled emails fro client
+ * Set Unpulled file to 1 indicating that there are unpulled emails for client
  * (useful to understand when need to send new mail notification to client)
  */
 private void setUnpulledFile(String client){

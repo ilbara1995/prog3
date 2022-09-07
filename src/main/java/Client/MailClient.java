@@ -154,7 +154,7 @@ public class MailClient {
         Client client = new Client(this.emailAddress.get(), this);
         System.out.println("[CLIENT] email address ->"+this.emailAddress.get());
         Runnable r = (()->client.communicate("127.0.0.1", 4445,"send",e));
-        System.out.println("[CLIENT "+emailAddressProperty().get()+"] Creating new thread to send email");
+        System.out.println("[CLIENT "+emailAddressProperty().get()+"] Creating new task to send email");
         pool.execute(r);
     }
 

@@ -64,9 +64,7 @@ public class ReplyController {
     @FXML
     protected void onSendButtonClick(){
         String[] receivers = labelFieldToRight.getText().trim().split(";");//insert receivers divided by ";"
-        for(String s: receivers){System.out.println("primo elem "+ s +" /n");}
         List<String> l = new ArrayList<>(Arrays.asList(receivers));
-        for(String dest: receivers){System.out.println("dest -> "+dest+"/n");}
         Email toSend = new Email(labelFromRight.getText(),l,labelObjectRight.getText().trim(),replyMailContent.getText().trim());
         mainController.sendEmail(toSend);
     }

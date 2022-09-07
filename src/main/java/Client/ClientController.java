@@ -173,7 +173,17 @@ public class ClientController {
 
     /**
      * Forward the selected email
-     */
+     *  /**
+     *          * modifiche:
+     *          * 1)sender -> sono io
+     *          * 2)receivers -> vuoto
+     *          * 3)object -> "Fwd" + selectedEmail.getSubject();
+     *          * 4)text -> "-----Forwarded message-----\n" + selectedEmail.getText();
+     *          * optionally before text -> "From: "+selectedEmail.getSender()+"\n";
+     *          *                                  "Date: " + selectedEmail.getDate();
+     *          *                                  "Subject" + selectedEmail.getSubject();
+     *          *                                  "To: " + model.getAddressProperty().get();
+     *          */
     @FXML
     protected void onForwardButtonClick(){
         if(selectedEmail != null){
@@ -182,17 +192,6 @@ public class ClientController {
                 "Subject: "+selectedEmail.getSubject()+"\n"+"To: "+ String.join("; ", selectedEmail.getReceivers());
             updateFwdView(new Email(model.emailAddressProperty().get(),List.of(""),selectedEmail.getSubject(), text));
             changeRightBorderPane(fwdBorderPane);
-        /**
-         * modifiche:
-         * 1)sender -> sono io
-         * 2)receivers -> vuoto
-         * 3)oggetto -> "Fwd" + selectedEmail.getSubject();
-         * 4)testo -> "-----Forwarded message-----\n" + selectedEmail.getText();
-         * opzionalmente prima del testo -> "Da: "+selectedEmail.getSender()+"\n";
-         *                                  "Date: " + selectedEmail.getDate();
-         *                                  "Subject" + selectedEmail.getSubject();
-         *                                  "To: " + model.getAddressProperty().get();
-         */
             lstEmail.setVisible(false);
         }
     }
@@ -213,6 +212,9 @@ public class ClientController {
         }
     }
 
+    /**
+     * change list view by clicking incoming mail label
+     */
     @FXML
     protected void onIncomingMailLabelClick(){
         if(sent)sent = false;
@@ -226,6 +228,9 @@ public class ClientController {
         updateDetailView(emptyEmail);
     }
 
+    /**
+     * change list view by clicking sent mail label
+     */
     @FXML
     protected void onSentMailLabelClick(){
         if(received)received = false;
@@ -239,7 +244,7 @@ public class ClientController {
         updateDetailView(emptyEmail);
     }
     /**
-     * Answer to the selected mail
+     * Answer to the selected mail and change right view
      */
     @FXML
     protected void onReplyButtonClick(){
@@ -251,7 +256,7 @@ public class ClientController {
     }
 
     /**
-     * Crea finestra nuova mail
+     * Change right view with new mail view
      * */
     @FXML
     protected void onNewButtonClick(){
@@ -261,7 +266,7 @@ public class ClientController {
     }
 
     /**
-     * Elimina la mail selezionata
+     * Delete selected email
      */
     @FXML
     protected void onDeleteButtonClick() {
@@ -273,7 +278,7 @@ public class ClientController {
     }
 
     /**
-     * Show selecte email inside view, for list of mail received
+     * Show selected email inside view
      */
     @FXML
     protected void showSelectedEmail(MouseEvent mouseEvent) {
@@ -284,7 +289,7 @@ public class ClientController {
 
 
     /**
-     * Aggiorna la vista con la mail selezionata
+     * update view with selected email
      */
     protected void updateDetailView(Email email) {
         if(email != null) {

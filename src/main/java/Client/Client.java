@@ -12,7 +12,7 @@ import java.util.ArrayList;
 
 public class Client {
     private Socket server = null;
-    private final String id;
+    private final String id;//clientname
     private final MailClient m;
 
 
@@ -54,7 +54,12 @@ public class Client {
         }
     }
 
-
+    /**
+     * communication protocol
+     * 1)client send his name to server
+     * 2)client read unpulled value sent from server
+     * 3)client send op to server
+     */
 
     /**
      * try to communicate with server,on success return true otherwise false
@@ -75,10 +80,9 @@ public class Client {
             //get unpulled value
             String tmp = bf.readLine();
             //if unpulled val is 1 send new mail notification
-            if(tmp.equals("1")) {//mando notifica
+            if(tmp.equals("1")) {
                System.out.println("get unpulled value from server = "+tmp);
-               m.sendNewMailNotification();
-            }
+               m.sendNewMailNotification();}
             System.out.println("[CLIENT "+this.id+"] server reply received -> "+tmp);
             //send operation
             pw.println(op);
